@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Melody Mixer</title>
+    <link rel="stylesheet" href="/static/index.css">
+    <script src="/static/index.js"></script>
+</head>
+
+<body>
+
+    <div class="'title">
+        <img src="/static/Group 4.png" alt="Title" class="title">
+    </div>
+    <div class="subhead">
+        Welcome to Melody Mixer a generative AI app that can help write
+         a fully composed song based on your inputs in a matter of minutes!
+         Please upload one audio file to begin composing. 
+    </div>
+
+    <div class="signalProc">
+        
+        <div class="butts">
+        <img src="/static/Rectangle 24.png" class="back">
+        <div class="header">Audio File</div>
+        <label for="audioUploadMel" id="customUploadBtn"></label>
+
+        <form id="uploadForm" enctype="multipart/form-data">
+            <input type="file" id="audioUploadMel" accept= "audio/midi,audio/x-midi">
+            <button type="button" onclick="uploadFile()">upload my file</button>
+        </form>
+
+        <p id="uploadText">Upload audio</p>
+
+        <div class="play">
+            <button id='playBtn' onclick="playAudioMelody()"></button>
+            <audio id="audioPlayerMelody" sex=""></audio>
+            <p>Audio Playback</p>
+            </div>
+        </div>
+        
+
+    </div>
+
+
+    <div class="butt">
+        
+        
+        <div id="imageButton">
+            <button id='demos' onclick="startNN()">
+                <a href="/gen"><img src='/static/Group 9.png' alt='Next Page'></a>
+            </button>
+        </div>
+    </div>
+</body>
+
+
+
+</html>

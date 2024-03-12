@@ -1,0 +1,42 @@
+#imageButton {
+    width: 180px;
+    height:50px;
+    }
+
+  .butt{
+    display:flex;
+    justify-content:right;
+    margin: 5%;
+    margin-bottom: 2px;
+    
+}
+
+.title{
+    margin-left:5%;
+    width: 60%;
+    height:auto;
+}
+
+.subhead{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #000000;
+    margin-left: 5%;
+    margin-top: 10px;
+}
+
+.options{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  width: 100vw;
+  margin-top: 40px;
+}
+
+.genre{
+  margin-top: 20px;
+}
+.length{
+  margin-top: 20px;
+}

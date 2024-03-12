@@ -1,0 +1,81 @@
+@font-face {
+    font-family: "Asap Condensed";
+    src: url("AsapCondensed-Regular.ttf");
+}
+
+.title{
+    margin-left:5%;
+    width: 60%;
+    height:auto;}
+
+#downloadLink {
+    display: none;
+}
+
+.loading{
+    display: flex;
+    flex-direction: column;
+    margin-top: 8%;
+    align-content: center;
+    align-items: center;
+}
+
+.loading img{
+    position: relative;
+    width:20%;
+    height:auto;
+}
+
+.Procc{
+    position: relative;
+    font-family: 'Asap Condensed-Regular', sans-serif;
+    font-size: 23px;
+    height: auto;
+    top: 10px;
+}
+
+.butt{
+    display:flex;
+    justify-content:center;
+    margin-top: 10%
+}
+
+.butt button span{
+    margin-top:130px;
+    display: block;
+    font-size: 20px;
+    font-family: 'Asap Condensed-Regular', sans-serif;
+}
+
+#downloadButton{
+    background-image: url('download.png');
+    cursor: pointer;
+    background-size: contain; 
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: transparent;
+    height:140px;
+    margin-left: 80px;
+}
+
+#playButton{
+    background-image: url('colourPlay.png');
+    cursor: pointer;
+    background-size: contain; 
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: transparent;
+    height:110px;
+    margin-top:18px;
+}
+
+#aye{
+    margin-top:145px;
+}
+
+@font-face {
+    font-family: "Asap Condensed-Regular";
+    src: url(AsapCondensed-Regular.ttf);
+}

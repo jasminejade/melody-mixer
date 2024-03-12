@@ -1,0 +1,123 @@
+#imageButton {
+    cursor: pointer; /* Adjust as needed */
+    height:20px;
+}    
+
+.butt{
+    display:flex;
+    justify-content:right;
+    margin-right: 5%;
+    margin-top: -12%;
+}
+
+.title{
+    margin-left:5%;
+    width: 60%;
+    height:auto;
+}
+
+.subhead{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #000000;
+    margin-left: 5%;
+    margin-top: 10px;
+}
+
+.signalProc{
+    margin-top: 2%;
+    display:flex;
+    justify-content: center;
+}
+
+
+.butts{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 19%;
+    margin-top: 3%;
+    text-align: center;
+    font-family:"Asap Condensed-Regular" ;
+    height:100%;
+}
+
+.play{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.back{
+    position: absolute;
+    width: 28%;
+    height: 45%;
+    z-index: -1;
+}
+
+.header{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#startRecording {
+    background-image: url('Record.png');
+    background-size: contain; 
+    cursor: pointer;
+    background-color: transparent;
+    border: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    width:36px;
+    height:44px;
+}
+
+#stopRecording {
+    background-image: url('Stop.png');
+    background-size: contain; 
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    width:36px;
+    height:44px;
+}
+
+.procc{
+    width:50%
+}
+
+#audioUploadMel, #audioUploadChord {
+    display: none;
+}
+
+#customUploadBtn {
+    background-image: url('Upload.png');
+    background-size: contain; 
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    width:36px;
+    height:44px;
+    margin-top: 20px;
+}
+
+#playBtn {
+    background-image: url('NoFilePlay.png');
+    cursor: pointer;
+    background-size: contain; 
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: transparent;
+    width:36px;
+    height:44px;
+    margin-top: 20px;
+}
+
+@font-face {
+    font-family: "Asap Condensed-Regular";
+    src: url(./AsapCondensed-Regular.ttf);
+}
+
