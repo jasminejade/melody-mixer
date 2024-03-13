@@ -94,7 +94,7 @@ class MelodyMixer:
     def generate(self):
         print('[*] generating')
         self.button_state(self.generate_button)
-        run_main(self.INPUT_FILE) # set the output to this to self.OUTPUT_FILE
+        self.OUTPUT_FILE=run_main(self.INPUT_FILE) # set the output to this to self.OUTPUT_FILE
     
 
     # listen to the results
@@ -102,7 +102,8 @@ class MelodyMixer:
         
         # select the output file if one wasn't given
         if output_file is None:
-            output_file = filedialog.askopenfilename(filetypes=[("Audio Files", "*.midi;*.mp3;*.wav;")])
+            output_file=self.OUTPUT_FILE
+            #output_file = filedialog.askopenfilename(filetypes=[("Audio Files", "*.mid;*.mp3;*.wav;")])
         
         if output_file:    
             # disable button

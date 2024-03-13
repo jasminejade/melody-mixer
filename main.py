@@ -63,8 +63,9 @@ def run_main(inputName):
         # run postprocessing npy2mid.py
         run_npy_2_mid(inputName)
         print("ALL DONE!!!!!!!")
-        return inputName
+        outputLocation=r'./output_'+inputName+'/'+'all_0.mid'
+        return outputLocation
 
 
-# inputName = 'humanlifeleadsheet'
-# run_main(inputName)
+#inputName = 'testing'
+#run_main(inputName)
