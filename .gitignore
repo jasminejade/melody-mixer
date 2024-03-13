@@ -2,3 +2,5 @@
 .vscode
 exps
 constantFiles
+output_*
+preFiles_*
