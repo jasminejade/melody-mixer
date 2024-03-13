@@ -3,7 +3,7 @@ from tkinter import filedialog
 from pygame import mixer 
 from PIL import Image, ImageTk
 
-from main import run_main
+#from main import run_main
 
 def upload_file(upload_text):
     file_path = filedialog.askopenfilename(filetypes=[("Audio Files", "*.mid;")])
@@ -26,33 +26,49 @@ class MelodyMixer:
         
         # create window
         self.window = tk.Tk()
+        self.window.configure(bg='white')
+        self.logo_img = Image.open("static/Group 4.png")
+        self.logophoto = ImageTk.PhotoImage(self.logo_img)
+        self.logo_lable = tk.Label(self.window, image=self.logophoto, bg='white')
+        self.logo_lable.grid(row = 0 , column = 0, columnspan=3, pady=10, padx=10)
+        self.window.geometry("800x600")
         self.window.title("Melody Mixer")
-        self.window.geometry("700x500")
         
         # set up visual stuff here for non reactive elements
         self.setup()
         
         # upload text will show the string thats getting inputted after selecting with upload button
-        self.upload_text = tk.Label(self.window, text="Select a *.mid file here!.")
-        self.upload_text.pack()
+        self.upload_text = tk.Label(self.window, text="Select a *.mid file here!", bg='white')
+        self.upload_text.grid(row=3, column=0)
+        self.upload_text.config(font=("Kozuka Mincho Pro R", 12))
 
-        self.upload_button = tk.Button(self.window, text="Upload Audio File", command=self.upload)
-        self.upload_button.pack()
+        self.up_img = Image.open("static/Upload.png")
+        self.up_button = ImageTk.PhotoImage(self.up_img)
+        self.upload_button = tk.Button(self.window, image=self.up_button, bg='white', borderwidth=0,cursor='hand2',highlightthickness = 0, command=self.upload)
+        self.upload_button.grid(row=2, column=0)
         
         # generate calls main
-        self.generate_button = tk.Button(self.window, text="Generate", command=self.generate)
-        self.generate_button.pack(pady=10)
+        self.mix_img = Image.open("static/Group 9.png")
+        self.mix_button = ImageTk.PhotoImage(self.mix_img)
+        self.generate_button = tk.Button(self.window, image=self.mix_button,cursor='hand2', borderwidth=0, highlightthickness = 0, command=self.generate)
+        self.generate_button.grid(row=4, column = 0, pady=10, padx=40)
         
         # play audio using pygame
         self.audio_text = tk.Label(self.window, text="") # this will update after you select play
-        self.audio_text.pack(pady=10)
-
-        self.play_button = tk.Button(self.window, text="Play Audio", command=self.results)
-        self.play_button.pack(pady=10)
+        self.audio_text.grid(row=0, column=2, pady=10, padx=10)
+        self.audiolabel = tk.Label(self.window, text="Play your song here!", bg='white')
+        self.audiolabel.grid(row=3, column=2)
+        self.audiolabel.config(font=("Kozuka Mincho Pro R", 12))
+        self.play_img = Image.open("static/colourPlay.png")
+        self.play_butt = ImageTk.PhotoImage(self.play_img)
+        self.play_button = tk.Button(self.window, image=self.play_butt,bg="white",borderwidth=0, cursor='hand2', command=self.results)
+        self.play_button.grid(row=2, column=2)
         
         # close program
-        self.close_button = tk.Button(self.window, text="Close", command=self.window.destroy)
-        self.close_button.pack(pady=10, padx=5)
+        self.close_img = Image.open("static/Group 8.png")
+        self.close_butt = ImageTk.PhotoImage(self.close_img)
+        self.close_button = tk.Button(self.window, image=self.close_butt,borderwidth=0, cursor='hand2', command=self.window.destroy)
+        self.close_button.grid(row=4, column=2, padx=10, pady=40)
 
         # calls main loop
         self.start()
@@ -61,16 +77,15 @@ class MelodyMixer:
     # set visuals and components here that arent reactive (soph)
     def setup(self):
         
-        # set title
-        self.label = tk.Label(self.window, text="Melody Mixer")
-        self.label.pack(pady=10)
 
         # Subheading
-        subhead_text = "will generate a composed song based on your inputs in a matter of minutes! " \
-                       "Please upload one audio file to begin composing." \
-                        "by Jess, Cass, Soph, Jas " 
-        subhead_label = tk.Label(self.window, text=subhead_text, wraplength=400)
-        subhead_label.pack(pady=10)
+        subhead_text = "Welcome to Melody Mixer a generative AI app that can help write" \
+                        " a fully composed song based on your inputs in a matter of minutes!"\
+                        " Please upload an audio file to begin composing." \
+                        " \n By Jess, Cass, Soph, and Jas " 
+        subhead_label = tk.Label(self.window, text=subhead_text, bg = 'white', wraplength=650)
+        subhead_label.grid(row=1, column=0, columnspan=3, pady=40,padx=70)
+        subhead_label.config(font=("Arial", 12))
 
         
     def button_state(self, button):
@@ -94,8 +109,15 @@ class MelodyMixer:
     def generate(self):
         print('[*] generating')
         self.button_state(self.generate_button)
-        self.OUTPUT_FILE=run_main(self.INPUT_FILE) # set the output to this to self.OUTPUT_FILE
-    
+        #self.loading_img = Image.open("static/Loading.gif")
+        #self.loading = ImageTk.PhotoImage(self.loading_img)
+        #self.loading_label = tk.Label(self.window, image=self.loading, bg='white')
+        #self.loading_label.grid(row=3, column=1, pady=10, padx=10)
+        
+        #self.OUTPUT_FILE=run_main(self.INPUT_FILE) # set the output to this to self.OUTPUT_FILE
+        
+        #self.loading_label.destroy()
+       
 
     # listen to the results
     def results(self, output_file=None):
@@ -133,25 +155,3 @@ if __name__ == "__main__":
     main()
 
 
-# # Title
-# title_image = tk.PhotoImage(file="static/Group 4.png")  # Assuming this is your image path
-# title_label = tk.Label(self.window, image=title_image)
-# title_label.grid(row=0, column=0)
-
-# # Subheading
-# subhead_text = "Welcome to Melody Mixer, a generative AI app that can help write " \
-#                "a fully composed song based on your inputs in a matter of minutes! " \
-#                "Please upload one audio file to begin composing."
-# subhead_label = tk.Label(window, text=subhead_text, wraplength=400)
-# subhead_label.grid(row=1, column=0)
-
-
-# # Audio playback section
-
-
-# # Next page button (placeholder)
-# next_page_button = tk.Button(window, text="Next Page", command=start_nn)
-# next_page_button.grid(row=5, column=0)
-
-# # Run the Tkinter event loop
-# window.mainloop()
